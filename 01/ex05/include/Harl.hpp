@@ -3,26 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:15:23 by sscheini          #+#    #+#             */
-/*   Updated: 2026/03/12 19:15:24 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/25 20:02:48 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
-#define HARL_HPP
+# define HARL_HPP
+
+# include <iostream>
+# include <iomanip>
+# include <string>
 
 class Harl {
 public:
 
 	Harl();
-	Harl(const Harl& other);
-	Harl& operator=(const Harl& other);
+	Harl(const Harl &src);
+	Harl &operator=(const Harl &src);
 	~Harl();
+
+	void	complain(std::string level);
 
 private:
 
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
 	
 };
 

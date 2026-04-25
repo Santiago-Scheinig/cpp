@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:14:03 by sscheini          #+#    #+#             */
-/*   Updated: 2026/03/15 19:41:09 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/25 19:50:12 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include <string>
-#include <iostream>
-#include <iomanip>
+# include <string>
+# include <iostream>
+# include <iomanip>
 
 /**
  * @brief	Represents a Zombie entity with a name and basic behavior.

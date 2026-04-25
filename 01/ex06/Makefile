@@ -3,20 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+         #
+#    By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/20 20:02:25 by sscheini          #+#    #+#              #
-#    Updated: 2026/03/12 18:59:09 by sscheini         ###   ########.fr        #
+#    Updated: 2026/04/25 20:29:21 by sscheini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = harlFilter
 
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 CXXINCLUDES = -I include/
 
-SRCS = 	src/	\
+SRCS = 	src/main.cpp	\
+		src/Harl.cpp
 
 OBJS = $(SRCS:src/%.cpp=obj/%.o)
 

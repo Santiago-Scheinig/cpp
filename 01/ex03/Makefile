@@ -6,17 +6,20 @@
 #    By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/20 20:02:25 by sscheini          #+#    #+#              #
-#    Updated: 2026/03/12 18:59:09 by sscheini         ###   ########.fr        #
+#    Updated: 2026/03/16 17:37:21 by sscheini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = ex03
 
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 CXXINCLUDES = -I include/
 
-SRCS = 	src/	\
+SRCS = 	src/main.cpp	\
+		src/Weapon.cpp	\
+		src/HumanA.cpp	\
+		src/HumanB.cpp	\
 
 OBJS = $(SRCS:src/%.cpp=obj/%.o)
 
