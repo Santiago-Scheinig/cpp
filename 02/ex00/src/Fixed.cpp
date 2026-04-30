@@ -1,51 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 19:14:09 by sscheini          #+#    #+#             */
-/*   Updated: 2026/04/30 18:44:15 by sscheini         ###   ########.fr       */
+/*   Created: 2026/04/27 17:23:40 by sscheini          #+#    #+#             */
+/*   Updated: 2026/04/30 18:41:47 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-		Zombie::Zombie() {
+const int	Fixed::fraction = 8;
+
+			Fixed::Fixed() : point(0) {
+	std::cout << "Default constructor called\n";
 }
 
-		Zombie::Zombie(const Zombie& other) {
-
-	this->name = other.name;
+			Fixed::Fixed(const Fixed& other) {
+	std::cout << "Copy constructor called\n";
+	*this = other;
 }
 
-Zombie& Zombie::operator=(const Zombie& other) {
-	
+Fixed&		Fixed::operator=(const Fixed& other) {
+	std::cout << "Copy assignment operator called\n";
 	if (this != &other) {
-		this->name = other.name;
+		this->point = other.point;
+		this->setRawBits(other.getRawBits());
 	}
 	return *this;
 }
 
-		Zombie::~Zombie() {
-	std::cout << this->name << ": Died!\n";
+			Fixed::~Fixed() {
+	std::cout << "Destructor called\n";
 }
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void	Zombie::announce(void)
-{
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";
+int			Fixed::getRawBits(void) const {
+	std::cout << "getRawBits member function called\n";
+	return (this->point);
 }
 
-void	Zombie::setName(std::string name)
-{
-	this->name = name;
+void		Fixed::setRawBits(int const raw) {
+	this->point = raw;
 }
+
+/*--------------------------------------------------------------------------*/
+/*------------------------------------END-----------------------------------*/
+/*--------------------------------------------------------------------------*/

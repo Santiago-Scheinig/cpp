@@ -6,7 +6,7 @@
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:12:47 by sscheini          #+#    #+#             */
-/*   Updated: 2026/04/25 20:45:11 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:46:11 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	replaceValues(std::string &line, const std::string str1, const std::string 
 	}
 }
 
-int	main(int argc, const char **argv)
+int		main(int argc, const char **argv)
 {
-	std::string filename;
+	std::string	filename;
 	std::string	str1;
 	std::string	str2;
 	std::string	line;

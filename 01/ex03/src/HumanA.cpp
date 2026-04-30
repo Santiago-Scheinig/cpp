@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:13:01 by sscheini          #+#    #+#             */
-/*   Updated: 2026/03/16 20:02:42 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:45:16 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string humanName, Weapon& firstWeapon) : name(humanName), mainHand(firstWeapon) {}
+		HumanA::HumanA(std::string humanName, Weapon& firstWeapon) : name(humanName), mainHand(firstWeapon) {}
 
-HumanA::HumanA(const HumanA& other) : name(other.name), mainHand(other.mainHand) {}
+		HumanA::HumanA(const HumanA& other) : name(other.name), mainHand(other.mainHand) {}
 
 HumanA& HumanA::operator=(const HumanA& other) {
 	if (this != &other) {
@@ -24,7 +24,7 @@ HumanA& HumanA::operator=(const HumanA& other) {
 	return *this;
 }
 
-HumanA::~HumanA() {
+		HumanA::~HumanA() {
 }
 
 void	HumanA::attack() const

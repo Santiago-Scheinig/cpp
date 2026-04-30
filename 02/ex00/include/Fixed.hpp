@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 19:13:10 by sscheini          #+#    #+#             */
-/*   Updated: 2026/04/30 18:44:56 by sscheini         ###   ########.fr       */
+/*   Created: 2026/04/27 17:23:28 by sscheini          #+#    #+#             */
+/*   Updated: 2026/04/30 18:41:21 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
-
-# include <iomanip>
+#ifndef FIXED_HPP
+# define FIXED_HPP
 # include <iostream>
-# include "Weapon.hpp"
 
-class HumanB {
-
+class Fixed {
 public:
 
-				HumanB(std::string humanName);
-				HumanB(const HumanB& other);
-				HumanB& operator=(const HumanB& other);
-				~HumanB();
+						Fixed();
+						Fixed(const Fixed& other);
+	Fixed& 				operator=(const Fixed& other);
+						~Fixed();
 
-	void		attack() const;
-	void		setWeapon(Weapon &newWeapon);
+	int					getRawBits(void) const;
+	void				setRawBits(int const raw);
 
 private:
 
-	std::string	name;
-	Weapon* 	mainHand;
-	
+	int 				point;
+	static const int	fraction;	
 };
 
 #endif

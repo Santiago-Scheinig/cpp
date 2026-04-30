@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   UserInterface.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:13:21 by sscheini          #+#    #+#             */
-/*   Updated: 2026/03/15 19:40:32 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:49:03 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ public:
 	 * @param	myPhoneBook	PhoneBook instance to
 	 *						modify.
 	 */
-	static void commandAdd(PhoneBook& myPhoneBook);
+	static void 		commandAdd(PhoneBook& myPhoneBook);
 
 	/**
 	 * @brief	Handles the SEARCH user command.
@@ -78,7 +78,7 @@ public:
 	 *
 	 * @note	Displays error if no contacts exist.
 	 */
-	static void commandSearch(PhoneBook& myPhoneBook);
+	static void 		commandSearch(PhoneBook& myPhoneBook);
 
 private:
 
@@ -88,7 +88,7 @@ private:
 	 *			Private to prevent instantiation of
 	 *			this utility class.
 	 */
-				UserInterface() {};
+						UserInterface() {};
 
 	/**
 	 * @brief			Removes leading and trailing whitespace.
@@ -114,7 +114,7 @@ private:
 	 * @return	true if string contains only digits,
 	 *			false otherwise.
 	 */
-	static bool validateNumber(const std::string& phoneNumber);
+	static bool			validateNumber(const std::string& phoneNumber);
 };
 
 #endif

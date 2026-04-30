@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   UserInterface.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:13:16 by sscheini          #+#    #+#             */
-/*   Updated: 2026/02/20 20:28:07 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:51:46 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /*----------------------------------PRIVATE---------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-bool UserInterface::validateNumber(const std::string& phoneNumber) {
+bool		UserInterface::validateNumber(const std::string& phoneNumber) {
 
 	size_t len;
 
@@ -27,7 +27,7 @@ bool UserInterface::validateNumber(const std::string& phoneNumber) {
 	return (true);
 }
 
-std::string UserInterface::trimInput(const std::string &input) {
+std::string	UserInterface::trimInput(const std::string &input) {
 
 	size_t start;
 	size_t end;
@@ -43,7 +43,7 @@ std::string UserInterface::trimInput(const std::string &input) {
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void UserInterface::commandAdd(PhoneBook& myPhoneBook) {
+void		UserInterface::commandAdd(PhoneBook& myPhoneBook) {
 
 	std::string newContact[5];
 	bool valid = false;
@@ -72,7 +72,7 @@ void UserInterface::commandAdd(PhoneBook& myPhoneBook) {
 	myPhoneBook.addContact(newContact);
 }
 
-void UserInterface::commandSearch(PhoneBook& myPhoneBook) {
+void		UserInterface::commandSearch(PhoneBook& myPhoneBook) {
 	
 	std::string	tmp;
 	bool		valid = false;
@@ -103,7 +103,7 @@ void UserInterface::commandSearch(PhoneBook& myPhoneBook) {
 	myPhoneBook.displayContact(ui);
 }
 
-std::string UserInterface::getInput(const std::string& message) {
+std::string	UserInterface::getInput(const std::string& message) {
 
 	std::string tmp;
 

@@ -6,7 +6,7 @@
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:14:03 by sscheini          #+#    #+#             */
-/*   Updated: 2026/04/25 19:50:12 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:42:41 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ private:
  * @note	The caller is responsible for managing the lifetime of the returned Zombie
  * 			and must ensure it is properly deleted to avoid memory leaks.
  */
-Zombie*		newZombie(std::string name);
+Zombie*			newZombie(const std::string& name);
 
 /**
  * @brief	Creates a temporary Zombie with the given name on the stack and makes it announce itself.
@@ -92,6 +92,6 @@ Zombie*		newZombie(std::string name);
  * @note	The Zombie created by this function is stack-allocated and will be automatically
  * 			destroyed when the function returns.
  */
-void		randomChump(std::string name);
+void			randomChump(const std::string& name);
 
 #endif

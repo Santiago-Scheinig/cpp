@@ -5,22 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 19:12:47 by sscheini          #+#    #+#             */
-/*   Updated: 2026/04/30 18:47:35 by sscheini         ###   ########.fr       */
+/*   Created: 2026/04/28 16:07:23 by sscheini          #+#    #+#             */
+/*   Updated: 2026/04/30 18:40:34 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int	main(int argc, char **argv)
-{
-	Harl	harl;
+int	main( void ) {
+	Fixed	a;
+	Fixed	const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	if (argc != 2)
+	if (a <= b)
 	{
-		std::cout << "Error: Invalid amount of arguments.\n";
-		return (1);
+		if (a < b)
+			std::cout << a << std::endl;
+		if (a == b)
+			std::cout << ++a << std::endl;
 	}
-	harl.complain(argv[1]);
-	return (0);
+	if (a >= b)
+	{
+		if (a > b)
+			std::cout << a << std::endl;
+		if (a == b)
+			std::cout << a++ << std::endl;		
+	}
+	if (a != b)
+		std::cout << b << std::endl;
+	std::cout << Fixed::min( --a, b ) << std::endl;
+	std::cout << Fixed::max( a--, b ) << std::endl;
+	return 0;
 }

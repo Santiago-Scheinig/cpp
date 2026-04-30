@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:13:23 by sscheini          #+#    #+#             */
-/*   Updated: 2026/03/15 19:38:28 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:51:52 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	*			Initializes all contact fields to empty
 	*			strings.
 	*/
-				Contact();
+						Contact();
 
 	/**
 	 * @brief	Constructs a Contacts object with data.
@@ -49,11 +49,11 @@ public:
 	 * @param	phoneNumber	Contact's phone number.
 	 * @param	darkestSecret	Contact's darkest secret.
 	 */
-				Contact(const std::string& firstName,
-						const std::string& lastName,
-						const std::string& nickName,
-						const std::string& phoneNumber,
-						const std::string& darkestSecret);
+						Contact(const std::string& firstName,
+								const std::string& lastName,
+								const std::string& nickName,
+								const std::string& phoneNumber,
+								const std::string& darkestSecret);
 
 	/**
 	 * @brief	Copy constructor for Contacts.
@@ -63,7 +63,7 @@ public:
 	 *
 	 * @param	other	Contacts instance to copy from.
 	 */
-				Contact(const Contact& other);
+						Contact(const Contact& other);
 
 	/**
 	 * @brief	Copy assignment operator.
@@ -75,7 +75,7 @@ public:
 	 *
 	 * @return	Reference to the assigned object.
 	 */
-	Contact&	operator=(const Contact& other);
+	Contact&			operator=(const Contact& other);
 
 	/**
 	 * @brief	Destructor for Contacts.
@@ -83,7 +83,7 @@ public:
 	 *			Performs cleanup when a Contacts object
 	 *			is destroyed.
 	 */
-				~Contact();
+						~Contact();
 	
 	/**
 	 * @brief			Retrieves the contact's first name.
@@ -123,11 +123,11 @@ public:
 
 private:
 
-	std::string firstName;
-	std::string lastName;
-	std::string nickName;
-	std::string phoneNumber;
-	std::string darkestSecret;
+	std::string			firstName;
+	std::string			lastName;
+	std::string			nickName;
+	std::string			phoneNumber;
+	std::string			darkestSecret;
 
 };
 

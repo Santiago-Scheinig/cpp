@@ -6,7 +6,7 @@
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:12:47 by sscheini          #+#    #+#             */
-/*   Updated: 2026/04/25 20:10:20 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:47:07 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	Harl harl;
+	Harl	harl;
 
 	if (argc != 2)
 	{

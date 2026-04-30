@@ -6,7 +6,7 @@
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:14:03 by sscheini          #+#    #+#             */
-/*   Updated: 2026/04/25 19:50:18 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:44:03 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,6 @@ private:
  *
  * @note	Must be freed with delete[], not delete.
  */
-Zombie* zombieHorde( int N, std::string name );
+Zombie* 		zombieHorde( int N, std::string name );
 
 #endif

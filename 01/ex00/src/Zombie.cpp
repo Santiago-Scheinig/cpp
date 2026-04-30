@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:14:09 by sscheini          #+#    #+#             */
-/*   Updated: 2026/03/15 19:35:40 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:43:37 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-Zombie::Zombie() {
+		Zombie::Zombie() {
 }
 
-Zombie::Zombie(std::string name) : name(name) 
-{}
+		Zombie::Zombie(std::string name) : name(name) {
+}
 
-Zombie::Zombie(const Zombie& other) {
+		Zombie::Zombie(const Zombie& other) {
 
 	this->name = other.name;
 }
 
-Zombie& Zombie::operator=(const Zombie& other) {
+Zombie&	Zombie::operator=(const Zombie& other) {
 	
 	if (this != &other) {
 		this->name = other.name;
@@ -36,7 +36,7 @@ Zombie& Zombie::operator=(const Zombie& other) {
 	return *this;
 }
 
-Zombie::~Zombie() {
+		Zombie::~Zombie() {
 	std::cout << this->name << ": Died!\n";
 }
 

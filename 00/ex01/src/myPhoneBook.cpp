@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   myPhoneBook.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:13:09 by sscheini          #+#    #+#             */
-/*   Updated: 2026/02/20 20:24:47 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:50:32 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@
  *
  * @return	0 on normal termination.
  */
-int main(int argc, char *argv[]) {
+int	main(int argc, char *argv[]) {
 
-	PhoneBook myPhoneBook;
-	std::string tmp;
+	PhoneBook	myPhoneBook;
+	std::string	tmp;
 
 	if (!argc || !argv || !argv[0])
 		return (1);

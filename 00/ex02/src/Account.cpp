@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 20:31:59 by sscheini          #+#    #+#             */
-/*   Updated: 2026/03/05 18:56:15 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:54:19 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 /*------------------------STATIC MEMBER INITIALIZATION----------------------*/
 /*--------------------------------------------------------------------------*/
 
-int Account::_nbAccounts = 0;
-int Account::_totalAmount = 0;
-int Account::_totalNbDeposits = 0;
-int Account::_totalNbWithdrawals = 0;
+int 	Account::_nbAccounts = 0;
+int 	Account::_totalAmount = 0;
+int 	Account::_totalNbDeposits = 0;
+int 	Account::_totalNbWithdrawals = 0;
 
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-Account::Account() {
+		Account::Account() {
 }
 
-Account::Account(int initial_deposit) {
+		Account::Account(int initial_deposit) {
 
 	this->_accountIndex = _nbAccounts++;
 	this->_amount = initial_deposit;
@@ -42,7 +42,7 @@ Account::Account(int initial_deposit) {
 	std::cout << " index:" << this->_accountIndex << ";amount:" << initial_deposit << ";created\n";
 }
 
-Account::~Account() {
+		Account::~Account() {
 	
 	_displayTimestamp();
 	std::cout << " index:" << this->_accountIndex << ";amount:" << this->_amount << ";closed\n";
@@ -66,22 +66,22 @@ void	Account::_displayTimestamp( void ) {
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-int	Account::getNbAccounts( void ) {
+int		Account::getNbAccounts( void ) {
 
 	return (_nbAccounts);
 }
 
-int	Account::getTotalAmount( void ) {
+int		Account::getTotalAmount( void ) {
 
 	return (_totalAmount);
 }
 
-int	Account::getNbDeposits( void ) {
+int		Account::getNbDeposits( void ) {
 
 	return (_totalNbDeposits);
 }
 
-int	Account::getNbWithdrawals( void ) {
+int		Account::getNbWithdrawals( void ) {
 
 	return (_totalNbWithdrawals);
 }

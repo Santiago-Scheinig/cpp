@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:13:14 by sscheini          #+#    #+#             */
-/*   Updated: 2026/02/20 20:23:59 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:51:18 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-PhoneBook::PhoneBook() : numberOfContacts(0) {}
+			PhoneBook::PhoneBook() : numberOfContacts(0) {
+}
 
-PhoneBook::PhoneBook(const PhoneBook& other) {
+			PhoneBook::PhoneBook(const PhoneBook& other) {
 	
 	for (int i = 0; i < 8; i++)
 		this->list[i] = other.list[i];
 }
 
-PhoneBook& PhoneBook::operator=(const PhoneBook& other) {
+PhoneBook&	PhoneBook::operator=(const PhoneBook& other) {
 	
 	if (this != &other) {
 		for (int i = 0; i < 8; i++)
@@ -33,13 +34,14 @@ PhoneBook& PhoneBook::operator=(const PhoneBook& other) {
 	return *this;
 }
 
-PhoneBook::~PhoneBook() {}
+			PhoneBook::~PhoneBook() {
+}
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PRIVATE---------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void PhoneBook::pushFront(Contact& newContact)
+void 		PhoneBook::pushFront(Contact& newContact)
 {
 	
 	for (int i = 0; i < 7; i++)
@@ -47,7 +49,7 @@ void PhoneBook::pushFront(Contact& newContact)
 	this->list[7] = newContact;
 }
 
-std::string PhoneBook::truncateContactInfo(const std::string& info) const {
+std::string	PhoneBook::truncateContactInfo(const std::string& info) const {
 	
 	std::string truncatedInfo;
 
@@ -62,12 +64,12 @@ std::string PhoneBook::truncateContactInfo(const std::string& info) const {
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-int PhoneBook::getNumberOfContacts() const {
+int			PhoneBook::getNumberOfContacts() const {
 
 	return (this->numberOfContacts);
 }
 
-void PhoneBook::addContact(const std::string (&newContact)[5]) {
+void		PhoneBook::addContact(const std::string (&newContact)[5]) {
 	
 	Contact tmp(newContact[0], newContact[1], newContact[2], newContact[3], newContact[4]);
 
@@ -80,7 +82,7 @@ void PhoneBook::addContact(const std::string (&newContact)[5]) {
 		pushFront(tmp);
 }
 
-void PhoneBook::displayContact(int index) const {
+void		PhoneBook::displayContact(int index) const {
 
 	if (index >= 0 && index < this->numberOfContacts)
 	{
@@ -94,7 +96,7 @@ void PhoneBook::displayContact(int index) const {
 		std::cout << "Contact at index " << index << " is empty or does not exist.\n";
 }
 
-void PhoneBook::listContacts() const {
+void		PhoneBook::listContacts() const {
 
 	std::cout << std::setw(10) << "Index" << "|" 
 		<< std::setw(10) << "First Name" << "|"

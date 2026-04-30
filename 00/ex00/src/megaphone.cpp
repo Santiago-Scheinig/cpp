@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 16:10:14 by sscheini          #+#    #+#             */
-/*   Updated: 2026/02/20 19:15:15 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:47:45 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
  */
 int	main(int argc, char **argv)
 {
-	std::string str;
+	std::string	str;
 
 	if (argc == 1)
 	{

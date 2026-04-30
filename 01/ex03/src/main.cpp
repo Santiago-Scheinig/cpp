@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sscheini <sscheini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 19:13:05 by sscheini          #+#    #+#             */
-/*   Updated: 2026/03/16 17:20:45 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 18:45:40 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main()
+int	main()
 {
 	
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
+		Weapon	club = Weapon("crude spiked club");
+		HumanA	bob("Bob", club);
 		
 		bob.attack();
 		club.setType("some other type of club");
@@ -27,8 +27,8 @@ int main()
 	}
 	
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
+		Weapon	club = Weapon("crude spiked club");
+		HumanB	jim("Jim");
 		
 		jim.setWeapon(club);
 		jim.attack();
