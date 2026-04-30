@@ -6,7 +6,7 @@
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 17:23:40 by sscheini          #+#    #+#             */
-/*   Updated: 2026/04/30 19:37:20 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/04/30 19:57:55 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,21 @@
 const int		Fixed::fraction = 8;
 
 				Fixed::Fixed() : point(0) {
-	std::cout << "Default constructor called\n";
 }
 
 				Fixed::Fixed(const int value) {
-	std::cout << "Int constructor called\n";
 	this->point = roundf(value * (1 << fraction));
 }
 
 				Fixed::Fixed(const float value) {
-	std::cout << "Float constructor called\n";
 	this->point = roundf(value * (1 << fraction));
 }
 
 				Fixed::Fixed(const Fixed& other) {
-	std::cout << "Copy constructor called\n";
 	*this = other;
 }
 
 Fixed&			Fixed::operator=(const Fixed& other) {
-	std::cout << "Copy assignment operator called\n";
 	if (this != &other) {
 		this->point = other.point;
 		this->setRawBits(other.getRawBits());
@@ -47,7 +42,6 @@ Fixed&			Fixed::operator=(const Fixed& other) {
 }
 
 				Fixed::~Fixed() {
-	std::cout << "Destructor called\n";
 }
 
 /*--------------------------------------------------------------------------*/
@@ -78,28 +72,28 @@ bool			Fixed::operator!=(const Fixed& other) const {
 	return (this->getRawBits() != other.getRawBits());
 }
 
-Fixed			Fixed::operator+(const Fixed& other) {
+Fixed			Fixed::operator+(const Fixed& other) const {
 	Fixed	result;
 	
 	result.setRawBits(this->getRawBits() + other.getRawBits());
 	return (result);
 }
 
-Fixed			Fixed::operator-(const Fixed& other) {
+Fixed			Fixed::operator-(const Fixed& other) const {
 	Fixed	result;
 	
 	result.setRawBits(this->getRawBits() - other.getRawBits());
 	return (result);
 }
 
-Fixed			Fixed::operator*(const Fixed& other) {
+Fixed			Fixed::operator*(const Fixed& other) const {
 	Fixed	result;
 	
 	result.setRawBits((long long) this->getRawBits() * other.getRawBits() >> this->fraction);
 	return (result);
 }
 
-Fixed			Fixed::operator/(const Fixed& other) {
+Fixed			Fixed::operator/(const Fixed& other) const {
 	Fixed	result;
 	
 	if (!other.toFloat())
@@ -107,7 +101,7 @@ Fixed			Fixed::operator/(const Fixed& other) {
 		std::cerr << "Error: division by zero detected\n";
 		return (*this);
 	}
-	result.setRawBits((long long) this->getRawBits() << this->fraction / other.getRawBits());
+	result.setRawBits(((long long) this->getRawBits() << this->fraction) / other.getRawBits());
 	return (result);
 }
 

@@ -6,17 +6,20 @@
 #    By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/20 20:02:25 by sscheini          #+#    #+#              #
-#    Updated: 2026/04/27 17:23:07 by sscheini         ###   ########.fr        #
+#    Updated: 2026/04/30 19:11:21 by sscheini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = ex03
 
 CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 CXXINCLUDES = -I include/
 
-SRCS =
+SRCS =	src/main.cpp	\
+		src/Fixed.cpp	\
+		src/Point.cpp	\
+		src/bsp.cpp
 
 OBJS = $(SRCS:src/%.cpp=obj/%.o)
 
