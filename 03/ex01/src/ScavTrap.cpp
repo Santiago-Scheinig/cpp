@@ -6,7 +6,7 @@
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 16:50:32 by sscheini          #+#    #+#             */
-/*   Updated: 2026/05/02 20:54:32 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:48:31 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,7 @@
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& other) {
 	if (this != &other) {
-		this->setName(other.getName());
-		this->setVersion(other.getVersion());
-		this->setHitPoints(other.getHitPoints());
-		this->setEnergyPoints(other.getEnergyPoints());
-		this->setAttackDamage(other.getAttackDamage());
+		ClapTrap::operator=(other);
 	}
 	return *this;
 }

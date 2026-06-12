@@ -6,7 +6,7 @@
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 19:48:59 by sscheini          #+#    #+#             */
-/*   Updated: 2026/05/02 20:52:38 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:56:24 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,7 @@
 
 FragTrap&	FragTrap::operator=(const FragTrap& other) {
 	if (this != &other) {
-		this->setName(other.getName());
-		this->setVersion(other.getVersion());
-		this->setHitPoints(other.getHitPoints());
-		this->setEnergyPoints(other.getEnergyPoints());
-		this->setAttackDamage(other.getAttackDamage());
+		ClapTrap::operator=(other);
 	}
 	return *this;
 }
