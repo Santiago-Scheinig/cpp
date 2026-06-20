@@ -1,47 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:42:13 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 19:16:50 by sscheini         ###   ########.fr       */
+/*   Created: 2026/05/07 17:40:40 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/19 21:08:32 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "AAnimal.hpp"
 
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Dog::Dog() {
-	setType("Dog");
-	std::cout << "A new stray " + getType() + " has born!\n";
+					AAnimal::AAnimal() : type("Animal") {
+	std::cout << "An Animal is being created...\n";
 }
 
-			Dog::Dog(const Dog& other) {
+					AAnimal::AAnimal(const AAnimal& other) {
 	*this = other;
 }
 
-Dog&		Dog::operator=(const Dog& other) {
+AAnimal&			AAnimal::operator=(const AAnimal& other) {
 	if (this != &other) {
-		setType(other.getType());
+		this->type = other.type;
 	}
 	return *this;
 }
 
-			Dog::~Dog() {
-	std::cout << "A stray " + getType() + " has died!\n";
+					AAnimal::~AAnimal() {
+	std::cout << "An Animal has been wiped from existence.\n";
 }
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void		Dog::makeSound() {
-	std::cout << "Bark Bark!\n";
+void				AAnimal::setType(const std::string &newType) {
+	this->type = newType;
+}
+
+const std::string	&AAnimal::getType() const {
+	return (this->type);
 }
 
 /*--------------------------------------------------------------------------*/

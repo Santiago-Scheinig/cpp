@@ -1,48 +1,72 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:42:13 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 19:16:50 by sscheini         ###   ########.fr       */
+/*   Created: 2026/06/19 18:08:10 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/19 20:03:51 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Brain.hpp"
 
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Dog::Dog() {
-	setType("Dog");
-	std::cout << "A new stray " + getType() + " has born!\n";
+			Brain::Brain() : ideaIndex(0) {
+	std::cout << "...a Brain is being developed:\n";
 }
 
-			Dog::Dog(const Dog& other) {
+			Brain::Brain(const Brain& other) {
 	*this = other;
 }
 
-Dog&		Dog::operator=(const Dog& other) {
+Brain&		Brain::operator=(const Brain& other) {
+	int	i;
+
 	if (this != &other) {
-		setType(other.getType());
+		i = -1;
+		while (++i < other.ideaIndex)
+			this->ideas[i] = other.ideas[i];
+		this->ideaIndex = other.ideaIndex;
 	}
 	return *this;
 }
 
-			Dog::~Dog() {
-	std::cout << "A stray " + getType() + " has died!\n";
+			Brain::~Brain() {
+	std::cout << "Intelligence wasn't enough to survive...\n";
+
 }
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void		Dog::makeSound() {
-	std::cout << "Bark Bark!\n";
+void		Brain::addIdea(std::string idea) {
+	ideas[ideaIndex] = idea;
+	ideaIndex++;
 }
+
+int			Brain::getIdeaIndex() {
+	return (this->ideaIndex);
+}
+
+void		Brain::printIdea(int i) {
+	if (i > ideaIndex || i >= 100)
+	{
+		std::cout << "I haven't been thinking for that long!\n";
+		return ;
+	}
+	std::cout << ideas[i] << std::endl;
+}
+/*--------------------------------------------------------------------------*/
+/*----------------------------------PRIVATE---------------------------------*/
+/*--------------------------------------------------------------------------*/
+
+
 
 /*--------------------------------------------------------------------------*/
 /*------------------------------------END-----------------------------------*/

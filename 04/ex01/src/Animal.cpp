@@ -1,47 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:42:13 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 19:16:50 by sscheini         ###   ########.fr       */
+/*   Created: 2026/05/07 17:40:40 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/19 20:09:26 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Dog::Dog() {
-	setType("Dog");
-	std::cout << "A new stray " + getType() + " has born!\n";
+					Animal::Animal() : type("Animal") {
+	std::cout << "An Animal is being created...\n";
 }
 
-			Dog::Dog(const Dog& other) {
+					Animal::Animal(const Animal& other) {
 	*this = other;
 }
 
-Dog&		Dog::operator=(const Dog& other) {
+Animal&				Animal::operator=(const Animal& other) {
 	if (this != &other) {
-		setType(other.getType());
+		this->type = other.type;
 	}
 	return *this;
 }
 
-			Dog::~Dog() {
-	std::cout << "A stray " + getType() + " has died!\n";
+					Animal::~Animal() {
+	std::cout << "An Animal has been wiped from existence.\n";
 }
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void		Dog::makeSound() {
-	std::cout << "Bark Bark!\n";
+void				Animal::setIdea(std::string idea) {
+	(void)idea;
+	std::cout << "Abstract concept can't have ideas, ya'know?\n";
+}
+
+void				Animal::think() {
+	std::cout << "Abstract concept can't think, ya'know?\n";
+}
+
+void				Animal::makeSound() {
+	std::cout << "Abstract concepts don't make sounds, ya'know?\n";
+}
+
+void				Animal::setType(const std::string &newType) {
+	this->type = newType;
+}
+
+const std::string	&Animal::getType() const {
+	return (this->type);
 }
 
 /*--------------------------------------------------------------------------*/

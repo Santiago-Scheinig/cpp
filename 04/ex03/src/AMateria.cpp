@@ -1,47 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:42:13 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 19:16:50 by sscheini         ###   ########.fr       */
+/*   Created: 2026/06/19 20:45:00 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/20 14:36:08 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "AMateria.hpp"
 
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Dog::Dog() {
-	setType("Dog");
-	std::cout << "A new stray " + getType() + " has born!\n";
+					AMateria::AMateria() : _type("") {
 }
 
-			Dog::Dog(const Dog& other) {
+					AMateria::AMateria(std::string const & type) : _type(type) {
+}
+
+					AMateria::AMateria(const AMateria& other) {
 	*this = other;
 }
 
-Dog&		Dog::operator=(const Dog& other) {
+AMateria&			AMateria::operator=(const AMateria& other) {
 	if (this != &other) {
-		setType(other.getType());
 	}
 	return *this;
 }
 
-			Dog::~Dog() {
-	std::cout << "A stray " + getType() + " has died!\n";
+					AMateria::~AMateria() {
 }
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void		Dog::makeSound() {
-	std::cout << "Bark Bark!\n";
+std::string	const &	AMateria::getType() const {
+	return (this->_type);
+}
+
+void				AMateria::use(ICharacter& target) {
+	(void) target;
+	std::cout << "Abstract Materia is raw power! You need to channel it first.\n";
 }
 
 /*--------------------------------------------------------------------------*/

@@ -1,47 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:42:13 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 19:16:50 by sscheini         ###   ########.fr       */
+/*   Created: 2026/05/07 17:50:39 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/19 19:16:38 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-
+#include "WrongCat.hpp"
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Dog::Dog() {
-	setType("Dog");
+			WrongCat::WrongCat() {
+	setType("WrongCat");
 	std::cout << "A new stray " + getType() + " has born!\n";
 }
 
-			Dog::Dog(const Dog& other) {
+			WrongCat::WrongCat(const WrongCat& other) {
 	*this = other;
 }
 
-Dog&		Dog::operator=(const Dog& other) {
+WrongCat&	WrongCat::operator=(const WrongCat& other) {
 	if (this != &other) {
 		setType(other.getType());
 	}
 	return *this;
 }
 
-			Dog::~Dog() {
+			WrongCat::~WrongCat() {
 	std::cout << "A stray " + getType() + " has died!\n";
-}
-
-/*--------------------------------------------------------------------------*/
-/*----------------------------------PUBLIC----------------------------------*/
-/*--------------------------------------------------------------------------*/
-
-void		Dog::makeSound() {
-	std::cout << "Bark Bark!\n";
 }
 
 /*--------------------------------------------------------------------------*/

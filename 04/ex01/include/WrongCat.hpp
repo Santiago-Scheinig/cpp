@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongDog.hpp                                       :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:45:01 by sscheini          #+#    #+#             */
-/*   Updated: 2026/05/07 17:49:57 by sscheini         ###   ########.fr       */
+/*   Created: 2026/05/07 17:45:02 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/19 19:12:22 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGDOG_HPP
-# define WRONGDOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include "WrongAnimal.hpp"
 
-class WrongDog : public WrongAnimal{
+class WrongCat : virtual public WrongAnimal {
 	public:
 
-					WrongDog();
-					WrongDog(const WrongDog& other);
-		WrongDog&	operator=(const WrongDog& other);
-					~WrongDog();
-
-		void		makeSound();
+					WrongCat();
+					WrongCat(const WrongCat& other);
+		WrongCat&	operator=(const WrongCat& other);
+					~WrongCat();
 
 	private:
 

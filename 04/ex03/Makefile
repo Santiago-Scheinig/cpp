@@ -6,7 +6,7 @@
 #    By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/20 20:02:25 by sscheini          #+#    #+#              #
-#    Updated: 2026/05/07 17:39:30 by sscheini         ###   ########.fr        #
+#    Updated: 2026/06/20 14:23:26 by sscheini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,12 @@ CXX = c++
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 CXXINCLUDES = -I include/
 
-SRCS =	src/main.cpp		\
+SRCS =	src/main.cpp			\
+		src/AMateria.cpp		\
+		src/Character.cpp		\
+		src/Cure.cpp			\
+		src/Ice.cpp				\
+		src/MateriaSource.cpp	\
 
 OBJS = $(SRCS:src/%.cpp=obj/%.o)
 

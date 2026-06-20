@@ -6,7 +6,7 @@
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 17:40:40 by sscheini          #+#    #+#             */
-/*   Updated: 2026/05/07 17:53:27 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/06/19 19:11:09 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,40 @@
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Animal::Animal() : type("") {}
-
-			Animal::Animal(const Animal& other) {
-	*this = other
+					Animal::Animal() : type("Animal") {
+	std::cout << "An Animal is being created...\n";
 }
 
-Animal&	Animal::operator=(const Animal& other) {
+					Animal::Animal(const Animal& other) {
+	*this = other;
+}
+
+Animal&				Animal::operator=(const Animal& other) {
 	if (this != &other) {
 		this->type = other.type;
 	}
 	return *this;
 }
 
-			Animal::~Animal() {
+					Animal::~Animal() {
+	std::cout << "An Animal has been wiped from existence.\n";
 }
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
+void				Animal::makeSound() {
+	std::cout << "Abstract concepts don't make sounds, ya'know?\n";
+}
 
+void				Animal::setType(const std::string &newType) {
+	this->type = newType;
+}
 
-/*--------------------------------------------------------------------------*/
-/*----------------------------------PRIVATE---------------------------------*/
-/*--------------------------------------------------------------------------*/
-
-
+const std::string	&Animal::getType() const {
+	return (this->type);
+}
 
 /*--------------------------------------------------------------------------*/
 /*------------------------------------END-----------------------------------*/

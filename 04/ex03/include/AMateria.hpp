@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:40:38 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 17:43:08 by sscheini         ###   ########.fr       */
+/*   Created: 2026/06/19 20:45:00 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/20 14:36:05 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <string>
 # include <iostream>
-
-class Animal {
+# include "ICharacter.hpp"
+ 
+class AMateria {
+	protected:
+	
+		std::string			_type;
+		
 	public:
 
-							Animal();
-							Animal(const Animal& other);
-		Animal&				operator=(const Animal& other);
-		virtual				~Animal();
+							AMateria();
+							AMateria(std::string const & type);
+							AMateria(const AMateria& other);
+		AMateria&			operator=(const AMateria& other);
+		virtual				~AMateria();			
 
-		virtual void		makeSound();
-		const std::string	&getType() const;
-		void				setType(const std::string &newType);
+		std::string	const & getType() const;
 
-	private:
+		virtual AMateria*	clone() const = 0;
 
-		std::string			type;
-	
+		virtual void		use(ICharacter& target);
 };
 
 #endif

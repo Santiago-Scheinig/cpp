@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:42:24 by sscheini          #+#    #+#             */
-/*   Updated: 2026/05/07 17:49:36 by sscheini         ###   ########.fr       */
+/*   Created: 2026/05/07 17:42:26 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/19 19:11:41 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-class Dog : virtual public Animal{
+# include "Animal.hpp"
+
+class Dog : virtual public Animal {
 	public:
 
 				Dog();

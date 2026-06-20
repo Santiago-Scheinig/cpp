@@ -1,47 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:42:13 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 19:16:50 by sscheini         ###   ########.fr       */
+/*   Created: 2026/05/07 17:50:41 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/19 19:16:34 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-
+#include "WrongAnimal.hpp"
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Dog::Dog() {
-	setType("Dog");
-	std::cout << "A new stray " + getType() + " has born!\n";
+					WrongAnimal::WrongAnimal() : type("WrongAnimal") {
+	std::cout << "An WrongAnimal is being created...\n";
 }
 
-			Dog::Dog(const Dog& other) {
+					WrongAnimal::WrongAnimal(const WrongAnimal& other) {
 	*this = other;
 }
 
-Dog&		Dog::operator=(const Dog& other) {
+WrongAnimal&		WrongAnimal::operator=(const WrongAnimal& other) {
 	if (this != &other) {
-		setType(other.getType());
+		this->type = other.type;
 	}
 	return *this;
 }
 
-			Dog::~Dog() {
-	std::cout << "A stray " + getType() + " has died!\n";
+					WrongAnimal::~WrongAnimal() {
+	std::cout << "An WrongAnimal has been wiped from existence.\n";
 }
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void		Dog::makeSound() {
-	std::cout << "Bark Bark!\n";
+void				WrongAnimal::makeSound() {
+	std::cout << "Abstract concepts don't make sounds, ya'know?\n";
+}
+
+void				WrongAnimal::setType(const std::string &newType) {
+	this->type = newType;
+}
+
+const std::string	&WrongAnimal::getType() const {
+	return(this->type);
 }
 
 /*--------------------------------------------------------------------------*/

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:40:38 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 17:43:08 by sscheini         ###   ########.fr       */
+/*   Created: 2026/05/07 17:42:26 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/19 19:41:37 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include <string>
-# include <iostream>
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Animal {
+class Cat : virtual public AAnimal {
 	public:
 
-							Animal();
-							Animal(const Animal& other);
-		Animal&				operator=(const Animal& other);
-		virtual				~Animal();
+				Cat();
+				Cat(const Cat& other);
+		Cat&	operator=(const Cat& other);
+				~Cat();
 
-		virtual void		makeSound();
-		const std::string	&getType() const;
-		void				setType(const std::string &newType);
+		void	makeSound();
+		void	setIdea(std::string idea);
+		void	think();
 
 	private:
 
-		std::string			type;
-	
+		Brain	*mind;
 };
 
 #endif

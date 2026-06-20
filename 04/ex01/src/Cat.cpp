@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 17:42:13 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 19:16:50 by sscheini         ###   ########.fr       */
+/*   Updated: 2026/06/19 19:59:27 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Dog::Dog() {
-	setType("Dog");
+			Cat::Cat() : mind(new Brain) {
+	setType("Cat");
 	std::cout << "A new stray " + getType() + " has born!\n";
 }
 
-			Dog::Dog(const Dog& other) {
+			Cat::Cat(const Cat& other) : mind(new Brain) {
 	*this = other;
 }
 
-Dog&		Dog::operator=(const Dog& other) {
+Cat&		Cat::operator=(const Cat& other) {
 	if (this != &other) {
-		setType(other.getType());
+		setType((other.getType()));
+		*(this->mind) = *(other.mind);
 	}
 	return *this;
 }
 
-			Dog::~Dog() {
+			Cat::~Cat() {
+	delete mind;
 	std::cout << "A stray " + getType() + " has died!\n";
 }
 
@@ -40,10 +42,23 @@ Dog&		Dog::operator=(const Dog& other) {
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void		Dog::makeSound() {
-	std::cout << "Bark Bark!\n";
+void		Cat::makeSound() {
+	std::cout << "Miiaauuu\n";
 }
 
+void		Cat::setIdea(std::string idea) {
+	this->mind->addIdea(idea);
+}
+
+void		Cat::think() {
+	int	i;
+	int	limit;
+
+	i = -1;
+	limit = this->mind->getIdeaIndex();
+	while (++i < limit)
+		this->mind->printIdea(i);
+}
 /*--------------------------------------------------------------------------*/
 /*------------------------------------END-----------------------------------*/
 /*--------------------------------------------------------------------------*/

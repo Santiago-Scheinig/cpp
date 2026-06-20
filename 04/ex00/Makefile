@@ -6,7 +6,7 @@
 #    By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/20 20:02:25 by sscheini          #+#    #+#              #
-#    Updated: 2026/05/07 17:39:22 by sscheini         ###   ########.fr        #
+#    Updated: 2026/06/19 17:52:34 by sscheini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,12 @@ CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 CXXINCLUDES = -I include/
 
 SRCS =	src/main.cpp		\
+		src/Animal.cpp		\
+		src/WrongAnimal.cpp	\
+		src/Dog.cpp			\
+		src/Cat.cpp			\
+		src/WrongCat.cpp	\
+
 
 OBJS = $(SRCS:src/%.cpp=obj/%.o)
 

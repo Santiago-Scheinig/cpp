@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sscheini <sscheini@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/07 17:42:13 by sscheini          #+#    #+#             */
-/*   Updated: 2026/06/19 19:16:50 by sscheini         ###   ########.fr       */
+/*   Created: 2026/06/19 20:45:29 by sscheini          #+#    #+#             */
+/*   Updated: 2026/06/20 14:36:13 by sscheini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cure.hpp"
 
 /*--------------------------------------------------------------------------*/
 /*--------------------------ORTHODOX CANONICAL FORM-------------------------*/
 /*--------------------------------------------------------------------------*/
 
-			Dog::Dog() {
-	setType("Dog");
-	std::cout << "A new stray " + getType() + " has born!\n";
+			Cure::Cure() : AMateria("cure") {
 }
 
-			Dog::Dog(const Dog& other) {
+			Cure::Cure(const Cure& other) {
 	*this = other;
 }
 
-Dog&		Dog::operator=(const Dog& other) {
+Cure&	Cure::operator=(const Cure& other) {
 	if (this != &other) {
-		setType(other.getType());
 	}
 	return *this;
 }
 
-			Dog::~Dog() {
-	std::cout << "A stray " + getType() + " has died!\n";
+			Cure::~Cure() {
 }
 
 /*--------------------------------------------------------------------------*/
 /*----------------------------------PUBLIC----------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-void		Dog::makeSound() {
-	std::cout << "Bark Bark!\n";
+AMateria*	Cure::clone() const {
+	return (new Cure(*this));	
+}
+
+void		Cure::use(ICharacter& target) {
+	std::cout << "* heals " << target.getName() << "’s wounds *\n";
 }
 
 /*--------------------------------------------------------------------------*/
